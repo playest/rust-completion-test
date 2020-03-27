@@ -10,10 +10,10 @@ struct Thingy {
 
 fn main() -> Result<(), ()> {
     let t = Thingy { driver: Driver::new() }; // will fail if executed because there is not driver named "a" but it doesn't matter, we are just testing completion here
-    // t.<ctrl + space> should at least list get_attribute (from trait Device), currently it doesn't
+    // t.get<ctrl + space> should at least list get_attribute (from trait Device), currently it doesn't
     // what's weird is that is lists .clone which is also obtained via #derive
 
-    //t.
+    //t.get
 
     Ok(())
 }
