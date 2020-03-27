@@ -1,5 +1,3 @@
-mod ev3;
-
 use ev3dev_lang_rust_derive::{Device};
 
 use std::io::Error;
