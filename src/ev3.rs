@@ -42,22 +42,6 @@ impl From<std::io::Error> for Ev3Error {
     }
 }
 
-impl From<std::string::FromUtf8Error> for Ev3Error {
-    fn from(err: std::string::FromUtf8Error) -> Self {
-        Ev3Error::InternalError {
-            msg: format!("{}", err),
-        }
-    }
-}
-
-impl From<std::num::ParseIntError> for Ev3Error {
-    fn from(err: std::num::ParseIntError) -> Self {
-        Ev3Error::InternalError {
-            msg: format!("{}", err),
-        }
-    }
-}
-
 #[derive(Debug, Clone)]
 pub struct Attribute {
     file: Rc<RefCell<File>>,
