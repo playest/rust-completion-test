@@ -3,6 +3,7 @@ use std::rc::Rc;
 use std::fs::File;
 use std::collections::HashMap;
 
+#[derive(Clone)]
 pub struct Driver {
     class_name: String,
     name: String,
@@ -10,10 +11,10 @@ pub struct Driver {
 }
 
 impl Driver {
-    pub fn new(class_name: &str, name: &str) -> Driver {
+    pub fn new() -> Driver {
         Driver {
-            class_name: class_name.to_owned(),
-            name: name.to_owned(),
+            class_name: "a".to_owned(),
+            name: "a".to_owned(),
             attributes: RefCell::new(HashMap::new()),
         }
     }
@@ -21,16 +22,6 @@ impl Driver {
     pub fn get_attribute(&self, attribute_name: &str) -> Attribute {
         let attributes = self.attributes.borrow_mut();
         attributes.get(attribute_name).expect("Internal error in the attribute map").clone()
-    }
-}
-
-impl Clone for Driver {
-    fn clone(&self) -> Self {
-        Driver {
-            class_name: self.class_name.clone(),
-            name: self.name.clone(),
-            attributes: RefCell::new(HashMap::new()),
-        }
     }
 }
 
