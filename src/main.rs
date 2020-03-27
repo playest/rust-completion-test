@@ -37,8 +37,9 @@ fn main() -> Result<(), ()> {
     // what's weird is that is lists .clone which is also obtained via #derive
 
     //t.get
-
-    t.get_attribute("a"); // what's weird is that it detects that get_attribute exists since this line is not an error
+    
+    // the next line is commented (even if it works) because some IDE use existing symbols for their completion algorithm
+    //t.get_attribute("a"); // what's weird is that it detects that get_attribute exists since this line is not an error
     //t.method_that_do_not_exists(); // and this gives an error
 
     Ok(())
