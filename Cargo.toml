@@ -1,0 +1,24 @@
+[package]
+name = "rust-completion-test"
+version = "0.1.0"
+authors = ["Anonymous <anon@ymo.us>"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+
+[dependencies.ev3dev-lang-rust-derive]
+version = "0.5"
+
+[dependencies.proc-macro2]
+version = "1.0"
+
+[dependencies.quote]
+version = "1.0"
+
+[dependencies.syn]
+version = "1.0"
+
+[dependencies.libc]
+version = "0.2"
