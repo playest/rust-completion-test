@@ -1,6 +1,3 @@
-use std::cell::RefCell;
-use std::rc::Rc;
-use std::fs::File;
 use std::io::Error;
 use std::fs::{OpenOptions};
 
@@ -9,16 +6,12 @@ pub struct Driver { }
 
 impl Driver {
     pub fn get_attribute(&self, attribute_name: &str) -> Attribute {
-        let f = Rc::new(RefCell::new(File::create("a").unwrap()));
-        Attribute {
-            file: f
-        }
+        Attribute { }
     }
 }
 
 #[derive(Debug, Clone)]
 pub struct Attribute {
-    file: Rc<RefCell<File>>,
 }
 
 pub trait Device {
@@ -28,9 +21,7 @@ pub trait Device {
 impl Attribute {
     pub fn new(class_name: &str, name: &str, attribute_name: &str) -> Result<Attribute, Error> {
         let file = OpenOptions::new().open(&"a")?;
-        Ok(Attribute {
-            file: Rc::new(RefCell::new(file)),
-        })
+        Ok(Attribute { })
     }
 
     fn get_str(&self) -> Result<String, Error> {
