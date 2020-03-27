@@ -1,5 +1,4 @@
 use std::io::Error;
-use std::fs::{OpenOptions};
 
 #[derive(Clone)]
 pub struct Driver { }
@@ -19,11 +18,6 @@ pub trait Device {
 }
 
 impl Attribute {
-    pub fn new(class_name: &str, name: &str, attribute_name: &str) -> Result<Attribute, Error> {
-        let file = OpenOptions::new().open(&"a")?;
-        Ok(Attribute { })
-    }
-
     fn get_str(&self) -> Result<String, Error> {
         Ok("a".to_owned())
     }

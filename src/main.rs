@@ -15,5 +15,8 @@ fn main() -> Result<(), ()> {
 
     //t.get
 
+    t.get_attribute("a"); // what's weird is that it detects that get_attribute exists since this line is not an error
+    //t.method_that_do_not_exists(); // and this gives an error
+
     Ok(())
 }
